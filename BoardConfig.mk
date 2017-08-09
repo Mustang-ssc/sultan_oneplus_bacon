@@ -98,13 +98,13 @@ BOARD_HARDWARE_CLASS += $(PLATFORM_PATH)/cmhw
 TARGET_TAP_TO_WAKE_NODE := "/proc/touchpanel/double_tap_enable"
 
 # Enable dexpreopt to speed boot time
-ifeq ($(HOST_OS),linux)
-  ifeq ($(call match-word-in-list,$(TARGET_BUILD_VARIANT),user),true)
-    ifeq ($(WITH_DEXPREOPT_BOOT_IMG_ONLY),)
-      WITH_DEXPREOPT_BOOT_IMG_ONLY := true
-    endif
-  endif
-endif
+#ifeq ($(HOST_OS),linux)
+#  ifeq ($(call match-word-in-list,$(TARGET_BUILD_VARIANT),user),true)
+#    ifeq ($(WITH_DEXPREOPT_BOOT_IMG_ONLY),)
+#      WITH_DEXPREOPT_BOOT_IMG_ONLY := true
+#    endif
+#  endif
+#endif
 
 # Encryption
 TARGET_HW_DISK_ENCRYPTION := true
@@ -148,7 +148,7 @@ TARGET_INIT_VENDOR_LIB := libinit_bacon
 TARGET_RECOVERY_DEVICE_MODULES := libinit_bacon
 
 # jemalloc
-MALLOC_SVELTE := true
+# MALLOC_SVELTE := true
 
 # Keymaster
 TARGET_KEYMASTER_WAIT_FOR_QSEE := true
